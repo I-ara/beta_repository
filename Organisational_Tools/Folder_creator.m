@@ -1,10 +1,12 @@
 
 %% When you get MRI and fMRI raw data, it often needs some organisation into functional runs and anatomy runs. 
 %% This script creates a directory with dedicated folders for easy Brain Voyager access
+
+%% Disclaimer: This script comes as it is - there might be errors at runtime and results might be wrong although the code was tested and did work as expected. 
 %% made by: Iara de Almeida Ivo
 
 % Add here your raw data_file
-cd('\\docs\user\docs\Raw_data')
+cd('D:\local\Raw_data_OG')
 
 %Makes list of participant names and calculates number of participants
 file_list = dir;
@@ -13,7 +15,7 @@ participant_names(:, 1:2) = [];
 number_of_participants = numel(participant_names);
 
 %Choose your new location
-sorted_location = 'D:\docs\Raw_data';
+sorted_location = 'D:\local\Raw_data_BV';
 
 
 for cur_participant = 1:number_of_participants
