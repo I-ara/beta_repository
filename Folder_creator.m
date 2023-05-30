@@ -1,7 +1,10 @@
-%Makes file folders for BV
 
-%This is the raw data file, from Leo rn
-cd('\\ca-um-nas201\fpn_rdm$\DM0571_LP_FoodBrainObesity\07_Raw_data\Raw_data')
+%% When you get MRI and fMRI raw data, it often needs some organisation into functional runs and anatomy runs. 
+%% This script creates a directory with dedicated folders for easy Brain Voyager access
+%% made by: Iara de Almeida Ivo
+
+% Add here your raw data_file
+cd('\\docs\user\docs\Raw_data')
 
 %Makes list of participant names and calculates number of participants
 file_list = dir;
@@ -9,8 +12,8 @@ participant_names = {file_list.name};
 participant_names(:, 1:2) = [];
 number_of_participants = numel(participant_names);
 
-%Choose new location
-sorted_location = 'D:\LeoData\Raw_data';
+%Choose your new location
+sorted_location = 'D:\docs\Raw_data';
 
 
 for cur_participant = 1:number_of_participants
@@ -25,13 +28,12 @@ for cur_participant = 1:number_of_participants
     mkdir(sorted_participant_file)
     cd(sorted_participant_file)
 
-    %Creates DCMs folder and First Analysis Folder, goes in
+    %Creates DCMs folder and a First Analysis Folder, goes in
     sorted_participant_file_og2 = fullfile(sorted_participant_file_og1, strcat(participant_id, '_DCMs'));
     mkdir(char(sorted_participant_file_og2))
 
     analysis_file = fullfile(sorted_participant_file_og1, strcat(participant_id, '_FirstAnalysis'));
     mkdir(char(analysis_file))
-
 
     cd(char(sorted_participant_file_og2))
 
@@ -44,7 +46,7 @@ for cur_participant = 1:number_of_participants
     mkdir(char(fun_loc))
     cd(char(fun_loc))
 
-    %Creates Functional folders
+    %Creates Functional folders (this example has four runs and it was a 3T experiment)
     func1_loc = fullfile(fun_loc, strcat('S', participant_id, '_3T_01'));
     mkdir(char(func1_loc))
 
