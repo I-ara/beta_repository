@@ -1,6 +1,7 @@
 # Beta Folder/ In Contruction
 
-Just a warning to proceed with caution, this is but a beta version, if you will. Which one, I don't know; but I heard that if climbers used the word 'beta' the way programers do, they'd all be dead.
+This is but a beta version, if you will. Which one, I don't know; but I heard that if climbers used the word 'beta' the way programers do, they'd all be dead. So, you know, just a warning to procede with caution.
+
 The official disclaimer is that these scripts come as they are - there might be errors at runtime and results might be wrong although the code was tested and did work as expected. 
 
 
